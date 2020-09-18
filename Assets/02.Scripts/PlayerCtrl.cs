@@ -12,9 +12,11 @@ public class PlayerCtrl : MonoBehaviour
     public float moveSpeed = 15.0f;
     public float turnSpeed = 80.0f;
 
+    public Animation anim;
+
     void Start()
     {
-        
+        anim = this.gameObject.GetComponent<Animation>();
     }
 
     void Update()
@@ -28,7 +30,6 @@ public class PlayerCtrl : MonoBehaviour
 
         Vector3 dir = (Vector3.forward * v) + (Vector3.right * h);
         transform.Translate( dir.normalized * Time.deltaTime * moveSpeed );
-
         transform.Rotate(Vector3.up * Time.deltaTime * turnSpeed * r );
 
         // transform.position += new Vector3(0, 0, 0.1f);
