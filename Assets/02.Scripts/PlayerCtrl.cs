@@ -20,7 +20,7 @@ public class PlayerCtrl : MonoBehaviour
         Debug.Log("V=" + v);
 
         Vector3 dir = (Vector3.forward * v) + (Vector3.right * h);
-        transform.Translate( dir.normalized * 0.1f );
+        transform.Translate( dir.normalized * Time.deltaTime * 8.0f );
 
         // transform.position += new Vector3(0, 0, 0.1f);
         // transform.Translate( Vector3.forward * 0.1f * v );
