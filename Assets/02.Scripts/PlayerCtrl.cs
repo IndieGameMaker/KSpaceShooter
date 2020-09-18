@@ -10,6 +10,7 @@ public class PlayerAnim
     public AnimationClip runBackward;
     public AnimationClip runLeft;
     public AnimationClip runRight;
+    public AnimationClip[] dies;
 }
 
 public class PlayerCtrl : MonoBehaviour
