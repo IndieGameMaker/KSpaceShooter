@@ -12,6 +12,7 @@ public class PlayerCtrl : MonoBehaviour
     public float moveSpeed = 15.0f;
     public float turnSpeed = 80.0f;
 
+    [HideInInspector]
     public Animation anim;
 
     void Start()
