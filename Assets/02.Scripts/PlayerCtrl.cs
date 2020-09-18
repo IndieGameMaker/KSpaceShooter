@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
+    [SerializeField]
     private float h;
     private float v;
+    private float r;
 
-    public float moveSpeed = 8.0f;
+    public float moveSpeed = 15.0f;
     public float turnSpeed = 80.0f;
 
     void Start()
@@ -19,11 +21,15 @@ public class PlayerCtrl : MonoBehaviour
     {
         h = Input.GetAxis("Horizontal");   // -1.0f ~ 0.0f ~ +1.0f
         v = Input.GetAxis("Vertical");     // -1.0f ~ 0.0f ~ +1.0f 
-        Debug.Log("h=" + h);    //Console View 로그 출력 
-        Debug.Log("V=" + v);
+        r = Input.GetAxis("Mouse X");
+
+        // Debug.Log("h=" + h);    //Console View 로그 출력 
+        // Debug.Log("V=" + v);
 
         Vector3 dir = (Vector3.forward * v) + (Vector3.right * h);
         transform.Translate( dir.normalized * Time.deltaTime * moveSpeed );
+
+        transform.Rotate(Vector3.up * Time.deltaTime * turnSpeed * r );
 
         // transform.position += new Vector3(0, 0, 0.1f);
         // transform.Translate( Vector3.forward * 0.1f * v );
