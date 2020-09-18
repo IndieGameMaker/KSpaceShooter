@@ -33,7 +33,8 @@ public class PlayerCtrl : MonoBehaviour
         // anim.clip = "Idle";
         // anim.Play();
 
-        anim.Play("Idle");
+        //anim.Play("Idle");
+        anim.Play(playerAnim.idle.name);
     }
 
     void Update()
@@ -49,6 +50,8 @@ public class PlayerCtrl : MonoBehaviour
         transform.Translate( dir.normalized * Time.deltaTime * moveSpeed );
         transform.Rotate(Vector3.up * Time.deltaTime * turnSpeed * r );
 
+        SwithAnimation(h, v);
+
         // transform.position += new Vector3(0, 0, 0.1f);
         // transform.Translate( Vector3.forward * 0.1f * v );
         // transform.Translate( Vector3.right * 0.1f * h );
@@ -61,5 +64,29 @@ public class PlayerCtrl : MonoBehaviour
             Vector3.one     = Vector3(1, 1, 1)
             Vector3.zero    = Vecotr3(0, 0, 0)
         */
+    }
+
+    void SwithAnimation(float h, float v)
+    {
+        if (v >= 0.1f) //Forward
+        {
+            anim.CrossFade(playerAnim.runForward.name, 0.25f);
+        }
+        else if (v <= -0.1f) //Backward
+        {
+            anim.CrossFade(playerAnim.runBackward.name, 0.25f);
+        }
+        else if (h >= 0.1f) //Right
+        {
+            anim.CrossFade(playerAnim.runRight.name, 0.25f);
+        }
+        else if (h <= -0.1f) //Left
+        {
+            anim.CrossFade(playerAnim.runLeft.name, 0.25f);
+        }
+        else
+        {
+            anim.CrossFade(playerAnim.idle.name, 0.25f);
+        }
     }
 }
