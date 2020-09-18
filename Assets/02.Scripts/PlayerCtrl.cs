@@ -2,6 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class PlayerAnim
+{
+    public AnimationClip idle;
+    public AnimationClip runForward;
+    public AnimationClip runBackward;
+    public AnimationClip runLeft;
+    public AnimationClip runRight;
+}
+
 public class PlayerCtrl : MonoBehaviour
 {
     [SerializeField]
@@ -12,12 +22,18 @@ public class PlayerCtrl : MonoBehaviour
     public float moveSpeed = 15.0f;
     public float turnSpeed = 80.0f;
 
+    public PlayerAnim playerAnim;
+
     [HideInInspector]
     public Animation anim;
 
     void Start()
     {
         anim = this.gameObject.GetComponent<Animation>();
+        // anim.clip = "Idle";
+        // anim.Play();
+
+        anim.Play("Idle");
     }
 
     void Update()
