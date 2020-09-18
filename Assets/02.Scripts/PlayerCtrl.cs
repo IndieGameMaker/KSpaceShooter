@@ -7,6 +7,9 @@ public class PlayerCtrl : MonoBehaviour
     private float h;
     private float v;
 
+    public float moveSpeed = 8.0f;
+    public float turnSpeed = 80.0f;
+
     void Start()
     {
         
@@ -20,7 +23,7 @@ public class PlayerCtrl : MonoBehaviour
         Debug.Log("V=" + v);
 
         Vector3 dir = (Vector3.forward * v) + (Vector3.right * h);
-        transform.Translate( dir.normalized * Time.deltaTime * 8.0f );
+        transform.Translate( dir.normalized * Time.deltaTime * moveSpeed );
 
         // transform.position += new Vector3(0, 0, 0.1f);
         // transform.Translate( Vector3.forward * 0.1f * v );
