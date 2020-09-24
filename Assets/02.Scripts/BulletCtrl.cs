@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletCtrl : MonoBehaviour
 {
+    [System.NonSerialized]
     public Rigidbody rb;
 
     void Start()
