@@ -9,8 +9,9 @@ public class FireCtrl : MonoBehaviour
     public Transform firePos;
     public GameObject bulletPrefab;
 
-    public AudioSource _audio;
+    private AudioSource _audio;
     public AudioClip fireSfx;
+    public MeshRenderer muzzleFlash;
     
     void Start()
     {
