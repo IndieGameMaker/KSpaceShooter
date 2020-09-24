@@ -49,6 +49,10 @@ public class FireCtrl : MonoBehaviour
         Quaternion rot = Quaternion.Euler(0, 0, angle);
         muzzleFlash.transform.localRotation = rot;
 
+        //Scale
+        float scale = Random.Range(1.0f, 3.0f); //0.0f ~ 3.0f
+        muzzleFlash.transform.localScale = Vector3.one * scale;   //new Vector3(scale, scale, scale);
+
         muzzleFlash.enabled = true;
         //Waitting...
         yield return new WaitForSeconds(0.3f);
