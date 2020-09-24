@@ -37,12 +37,18 @@ public class FireCtrl : MonoBehaviour
         // _audio.Play();
         _audio.PlayOneShot(fireSfx, 0.8f);
 
+        //Muzzle Flash Show
         StartCoroutine(this.ShowMuzzleFlash());
     }
 
     //Coroutine 
     IEnumerator ShowMuzzleFlash()
     {
+        //회전처리
+        float angle = Random.Range(0, 360); //0 ~ 359
+        Quaternion rot = Quaternion.Euler(0, 0, angle);
+        muzzleFlash.transform.localRotation = rot;
+
         muzzleFlash.enabled = true;
         //Waitting...
         yield return new WaitForSeconds(0.3f);
