@@ -16,6 +16,7 @@ public class FireCtrl : MonoBehaviour
     void Start()
     {
         _audio = GetComponent<AudioSource>();
+        muzzleFlash.enabled = false;
     }
 
     // Update is called once per frame
@@ -35,5 +36,16 @@ public class FireCtrl : MonoBehaviour
         // _audio.clip = fireSfx;
         // _audio.Play();
         _audio.PlayOneShot(fireSfx, 0.8f);
+
+        StartCoroutine(this.ShowMuzzleFlash());
+    }
+
+    //Coroutine 
+    IEnumerator ShowMuzzleFlash()
+    {
+        muzzleFlash.enabled = true;
+        //Waitting...
+        yield return new WaitForSeconds(0.3f);
+        muzzleFlash.enabled = false;
     }
 }
