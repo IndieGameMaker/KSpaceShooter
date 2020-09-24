@@ -14,7 +14,8 @@ public class RemoveBullet : MonoBehaviour
             Vector3 pos = points[0].point;
             //법선벡터가 이루고 있는 각도를 쿼터니언 타입으로 치환
             Quaternion rot = Quaternion.LookRotation(points[0].normal); 
-            Instantiate(sparkEffect, pos, rot); //(생성할 객체, 위치, 각도)
+            GameObject spark = Instantiate(sparkEffect, pos, rot); //(생성할 객체, 위치, 각도)
+            Destroy(spark, 0.5f); //Delay time
 
             Destroy(coll.gameObject); //Bullet
         }
