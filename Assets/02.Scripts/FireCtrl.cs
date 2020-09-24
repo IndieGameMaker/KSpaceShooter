@@ -45,12 +45,12 @@ public class FireCtrl : MonoBehaviour
     IEnumerator ShowMuzzleFlash()
     {
         //회전처리
-        float angle = Random.Range(0, 360); //0 ~ 359
+        float angle = UnityEngine.Random.Range(0, 360); //0 ~ 359
         Quaternion rot = Quaternion.Euler(0, 0, angle);
         muzzleFlash.transform.localRotation = rot;
 
         //Scale
-        float scale = Random.Range(1.0f, 3.0f); //0.0f ~ 3.0f
+        float scale = UnityEngine.Random.Range(1.0f, 3.0f); //0.0f ~ 3.0f
         muzzleFlash.transform.localScale = Vector3.one * scale;   //new Vector3(scale, scale, scale);
 
         muzzleFlash.enabled = true;

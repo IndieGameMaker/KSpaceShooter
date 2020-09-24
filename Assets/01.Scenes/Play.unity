@@ -700,7 +700,7 @@ GameObject:
   - component: {fileID: 1286738208}
   - component: {fileID: 1286738207}
   m_Layer: 0
-  m_Name: Quad
+  m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -739,7 +739,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f3c56e20694c743f9901da7a8f8dfa23, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -985,8 +985,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePos: {fileID: 2017625603}
   bulletPrefab: {fileID: 4314743189495071593, guid: 250ecea0faeb846e4b02046dae2364e3, type: 3}
-  _audio: {fileID: 0}
   fireSfx: {fileID: 8300000, guid: 3988c7241ff434c2a900f22726ee7a08, type: 3}
+  muzzleFlash: {fileID: 1286738207}
 --- !u!4 &1874915150 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400046, guid: f3cd25b3bf53c4adaaf087d862e435e6, type: 3}
