@@ -53,6 +53,12 @@ public class FireCtrl : MonoBehaviour
         float scale = UnityEngine.Random.Range(1.0f, 3.0f); //0.0f ~ 3.0f
         muzzleFlash.transform.localScale = Vector3.one * scale;   //new Vector3(scale, scale, scale);
 
+        //Texture Offset
+        // (0, 0) (0, 0.5) (0.5, 0) (0.5, 0.5) x = 0 , 0.5 / y = 0, 0.5 
+        // (0, 1) * 0.5f
+        Vector2 offset = new Vector2(Random.Range(0, 2), Random.Range(0, 2)) * 0.5f;
+        muzzleFlash.material.mainTextureOffset = offset;
+
         muzzleFlash.enabled = true;
         //Waitting...
         yield return new WaitForSeconds(0.3f);
