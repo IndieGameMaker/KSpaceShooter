@@ -12,11 +12,13 @@ public class FireCtrl : MonoBehaviour
     private AudioSource _audio;
     public AudioClip fireSfx;
     public MeshRenderer muzzleFlash;
+    public Light fireLight;
     
     void Start()
     {
         _audio = GetComponent<AudioSource>();
         muzzleFlash.enabled = false;
+        fireLight.intensity = 0.0f;
     }
 
     // Update is called once per frame
@@ -59,9 +61,15 @@ public class FireCtrl : MonoBehaviour
         Vector2 offset = new Vector2(Random.Range(0, 2), Random.Range(0, 2)) * 0.5f;
         muzzleFlash.material.mainTextureOffset = offset;
 
+        //Light On
+        fireLight.intensity = Random.Range(1.0f, 3.0f);
+
         muzzleFlash.enabled = true;
         //Waitting...
         yield return new WaitForSeconds(0.3f);
+
         muzzleFlash.enabled = false;
+        //Light Off
+        fireLight.intensity = 0.0f;
     }
 }
