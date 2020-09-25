@@ -38,6 +38,8 @@ public class MonsterCtrl : MonoBehaviour
         }
 
         agent = GetComponent<NavMeshAgent>();
+
+        StartCoroutine(this.CheckMonsterState());
     }
 
     //몬스터의 상태만 계속 체크하는 코루틴
