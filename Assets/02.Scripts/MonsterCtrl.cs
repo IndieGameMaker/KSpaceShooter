@@ -20,6 +20,7 @@ public class MonsterCtrl : MonoBehaviour
     private Transform playerTr;
 
     private NavMeshAgent agent;
+    private Animator anim;
 
     public float traceDist = 10.0f;
     public float attackDist = 2.0f;
@@ -38,6 +39,7 @@ public class MonsterCtrl : MonoBehaviour
         }
 
         agent = GetComponent<NavMeshAgent>();
+        anim  = GetComponent<Animator>();
 
         StartCoroutine(this.CheckMonsterState());
         StartCoroutine(this.MonsterAction());
@@ -77,10 +79,13 @@ public class MonsterCtrl : MonoBehaviour
             {
                 case STATE.IDLE:
                     agent.isStopped = true;
+                    anim.SetBool("IsTrace", false);
                     break;
                 case STATE.TRACE:
                     agent.SetDestination(playerTr.position);
                     agent.isStopped = false;
+
+                    anim.SetBool("IsTrace", true);
                     break;
                 case STATE.ATTACK:
                     break;
