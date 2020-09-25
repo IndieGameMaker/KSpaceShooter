@@ -30,12 +30,13 @@ public class MonsterCtrl : MonoBehaviour
 
     //Animator Parametor Hash 미리 추출
     private int hashAttack;
+    private int hashHit;
 
     // Start is called before the first frame update
     void Start()
     {
         hashAttack = Animator.StringToHash("IsAttack");
-
+        hashHit    = Animator.StringToHash("Hit");
 
         monsterTr = GetComponent<Transform>(); //monsterTr = transform;
         GameObject playerObj = GameObject.FindGameObjectWithTag("PLAYER"); //GameObject.Find("Player");
@@ -106,5 +107,13 @@ public class MonsterCtrl : MonoBehaviour
         }
     }
 
+
+    void OnCollisionEnter(Collision coll)
+    {
+        if (coll.collider.CompareTag("BULLET"))
+        {
+            Destroy(coll.gameObject);
+        }
+    }
 
 }
