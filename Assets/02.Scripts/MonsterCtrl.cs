@@ -76,8 +76,11 @@ public class MonsterCtrl : MonoBehaviour
             switch (state)
             {
                 case STATE.IDLE:
+                    agent.isStopped = true;
                     break;
                 case STATE.TRACE:
+                    agent.SetDestination(playerTr.position);
+                    agent.isStopped = false;
                     break;
                 case STATE.ATTACK:
                     break;
