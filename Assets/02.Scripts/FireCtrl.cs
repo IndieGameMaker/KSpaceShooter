@@ -44,7 +44,7 @@ public class FireCtrl : MonoBehaviour
     void Fire()
     {
         //Bullet 생성
-        //Instantiate(bulletPrefab, firePos.position, firePos.rotation);
+        Instantiate(bulletPrefab, firePos.position, firePos.rotation);
 
         //총소리 발생
         // _audio.clip = fireSfx;

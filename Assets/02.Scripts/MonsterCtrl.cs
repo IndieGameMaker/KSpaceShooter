@@ -117,14 +117,18 @@ public class MonsterCtrl : MonoBehaviour
         if (coll.collider.CompareTag("BULLET"))
         {
             Destroy(coll.gameObject);
-            anim.SetTrigger(hashHit);
-
-            hp -= 20.0f;
-            if (hp <= 0.0f)
-            {
-                MonsterDie();
-            }
         }
+    }
+
+    public void OnDamage()
+    {
+        anim.SetTrigger(hashHit);
+
+        hp -= 20.0f;
+        if (hp <= 0.0f)
+        {
+            MonsterDie();
+        }        
     }
 
     void MonsterDie()
