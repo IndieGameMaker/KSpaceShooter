@@ -10,18 +10,33 @@ public class GameManager : MonoBehaviour
 
     public bool isGameOver = false;
 
+    private WaitForSeconds ws;
+
     // Start is called before the first frame update
     void Start()
     {
+        ws = new WaitForSeconds(createTime);
+
         GameObject spawnPointGroup = GameObject.Find("SpawnPointGroup");
         points = spawnPointGroup.GetComponentsInChildren<Transform>();
 
         monsterPrefab = Resources.Load<GameObject>("monster");
+
+        StartCoroutine(this.CreateMonster());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator CreateMonster()
     {
-        
+        while(!isGameOver)
+        {
+            yield return ws;
+
+            int idx = Random.Range(1, points.Length);
+
+            GameObject monster = Instantiate<GameObject>(monsterPrefab);
+            monster.transform.position = points[idx].position;
+            Vector3 dir = points[0].position - points[idx].position;
+            monster.transform.rotation = Quaternion.LookRotation(dir);
+        }
     }
 }
