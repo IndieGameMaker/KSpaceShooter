@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     {
         GameObject spawnPointGroup = GameObject.Find("SpawnPointGroup");
         points = spawnPointGroup.GetComponentsInChildren<Transform>();
+
+        monsterPrefab = Resources.Load<GameObject>("monster");
     }
 
     // Update is called once per frame
