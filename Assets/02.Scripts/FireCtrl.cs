@@ -16,6 +16,8 @@ public class FireCtrl : MonoBehaviour
 
     [Range(5.0f, 20.0f)]
     public float fireRange = 10.0f;
+
+    private RaycastHit hit;
     
     void Start()
     {
@@ -32,13 +34,18 @@ public class FireCtrl : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Fire();
+            if (Physics.Raycast(firePos.position, firePos.forward, out hit, fireRange))
+            {
+                Debug.Log(hit.collider.name);
+            }
         }
     }
 
     void Fire()
     {
         //Bullet 생성
-        Instantiate(bulletPrefab, firePos.position, firePos.rotation);
+        //Instantiate(bulletPrefab, firePos.position, firePos.rotation);
+
         //총소리 발생
         // _audio.clip = fireSfx;
         // _audio.Play();
