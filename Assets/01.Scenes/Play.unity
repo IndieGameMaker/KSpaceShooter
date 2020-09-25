@@ -212,6 +212,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sparkEffect: {fileID: 1000011945391522, guid: 78b71003e8b357d4bbf89c8b5e5e4f0e, type: 3}
+--- !u!114 &105140838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105140834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9938433ad95844880b042eddef3f3e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  expEffect: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
 --- !u!1001 &572230277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -703,7 +716,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.10894247, y: 0.000000058445938, z: -0.000000006405369, w: 0.99404806}
+  m_LocalRotation: {x: 0.10894247, y: 0.000000052870853, z: -0.0000000057943694, w: 0.99404806}
   m_LocalPosition: {x: 0, y: 2.6269999, z: -3.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1480,7 +1493,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1947595575}
-  m_LocalRotation: {x: 0.10894247, y: 0.000000058445938, z: -0.000000006405369, w: 0.99404806}
+  m_LocalRotation: {x: 0.10894247, y: 0.000000052870853, z: -0.0000000057943694, w: 0.99404806}
   m_LocalPosition: {x: 0, y: 2.6269999, z: -3.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
