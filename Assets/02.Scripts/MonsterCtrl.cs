@@ -69,10 +69,6 @@ public class MonsterCtrl : MonoBehaviour
 
     //몬스터의 상태에 따라서 행동을 분기처리하는 코루틴
 
-    void Update()
-    {
-        agent.SetDestination(playerTr.position);
-    }
 
 
 }
