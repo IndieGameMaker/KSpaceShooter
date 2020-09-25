@@ -28,9 +28,15 @@ public class MonsterCtrl : MonoBehaviour
     //몬스터의 사망여부
     public bool isDie = false;
 
+    //Animator Parametor Hash 미리 추출
+    private int hashAttack;
+
     // Start is called before the first frame update
     void Start()
     {
+        hashAttack = Animator.StringToHash("IsAttack");
+
+
         monsterTr = GetComponent<Transform>(); //monsterTr = transform;
         GameObject playerObj = GameObject.FindGameObjectWithTag("PLAYER"); //GameObject.Find("Player");
         if (playerObj != null)
@@ -85,9 +91,12 @@ public class MonsterCtrl : MonoBehaviour
                     agent.SetDestination(playerTr.position);
                     agent.isStopped = false;
 
+                    anim.SetBool(hashAttack, false);
                     anim.SetBool("IsTrace", true);
                     break;
                 case STATE.ATTACK:
+                    agent.isStopped = true;
+                    anim.SetBool(hashAttack, true);
                     break;
                 case STATE.DIE:
                     break;
