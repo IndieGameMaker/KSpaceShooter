@@ -37,7 +37,7 @@ public class FireCtrl : MonoBehaviour
         //총소리 발생
         // _audio.clip = fireSfx;
         // _audio.Play();
-        _audio.PlayOneShot(fireSfx, 0.8f);
+        _audio.PlayOneShot(fireSfx, 0.1f);
 
         //Muzzle Flash Show
         StartCoroutine(this.ShowMuzzleFlash());
