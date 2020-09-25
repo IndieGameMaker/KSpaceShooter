@@ -13,6 +13,9 @@ public class FireCtrl : MonoBehaviour
     public AudioClip fireSfx;
     public MeshRenderer muzzleFlash;
     public Light fireLight;
+
+    [Range(5.0f, 20.0f)]
+    public float fireRange = 10.0f;
     
     void Start()
     {
