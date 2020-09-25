@@ -8,6 +8,12 @@ public class BarrelCtrl : MonoBehaviour
     private int hitCount = 0;
 
     public Texture[] textures;
+    private MeshRenderer _renderer;
+
+    void Start()
+    {
+        _renderer = GetComponentInChildren<MeshRenderer>();
+    }
 
     void OnCollisionEnter(Collision coll)
     {
